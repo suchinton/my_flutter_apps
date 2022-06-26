@@ -1,20 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:english_words/english_words.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
+    final wordPair = WordPair.random();
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.grey,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+        theme: ThemeData(primaryColor: Color.fromARGB(255, 204, 80, 226)),
+        home: RandomWords());
+  }
+}
+
+class RandomWords extends StatefulWidget {
+  @override
+  RandomWordsState createState() => RandomWordState();
+}
+
+class RandomWordStates extends State<RandomWords> {
+  Widget _buildList()
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(title: Text('WordPair Generator')), body: _buildList());
   }
 }
